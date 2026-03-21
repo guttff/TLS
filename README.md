@@ -1,5 +1,7 @@
 # 🌍 Ultimate Travel & Lifestyle Planning Hub
 
+![Theme: Dark Mode Ready](https://img.shields.io/badge/theme-dark_mode_ready-0D1117?style=for-the-badge&logo=github&logoColor=white)
+
 A fully interactive, data-driven travel & lifestyle dashboard designed for fast decision-making, price comparison, and planning efficiency.
 
 ---
@@ -21,7 +23,11 @@ A fully interactive, data-driven travel & lifestyle dashboard designed for fast 
 
 Global travel from Florida offers diverse experiences but varies significantly in cost, travel time, and logistics.
 
-![World Travel](https://images.unsplash.com/photo-1502920917128-1aa500764cbd)
+<picture>
+	<source media="(prefers-color-scheme: dark)" srcset="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=1600&q=80&sat=-100&exp=-40#gh-dark-mode-only">
+	<source media="(prefers-color-scheme: light)" srcset="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=1600&q=80#gh-light-mode-only">
+	<img alt="World Travel" src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=1600&q=80">
+</picture>
 
 ---
 
@@ -54,7 +60,11 @@ Florida-->Brazil[Brazil ~8h]
 
 ### 🇫🇷 Paris
 
-![Paris](https://images.unsplash.com/photo-1499856871958-5b9627545d1a)
+<picture>
+	<source media="(prefers-color-scheme: dark)" srcset="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=1600&q=80&sat=-100&exp=-40#gh-dark-mode-only">
+	<source media="(prefers-color-scheme: light)" srcset="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=1600&q=80#gh-light-mode-only">
+	<img alt="Paris" src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=1600&q=80">
+</picture>
 
 - 🔗 [https://en.parisinfo.com/](https://en.parisinfo.com/)
 - ⭐ Rating: 9/10
@@ -63,7 +73,11 @@ Florida-->Brazil[Brazil ~8h]
 
 ### 🇯🇵 Tokyo
 
-![Tokyo](https://images.unsplash.com/photo-1505060890934-08b3cfead48d)
+<picture>
+	<source media="(prefers-color-scheme: dark)" srcset="https://images.unsplash.com/photo-1505060890934-08b3cfead48d?auto=format&fit=crop&w=1600&q=80&sat=-100&exp=-40#gh-dark-mode-only">
+	<source media="(prefers-color-scheme: light)" srcset="https://images.unsplash.com/photo-1505060890934-08b3cfead48d?auto=format&fit=crop&w=1600&q=80#gh-light-mode-only">
+	<img alt="Tokyo" src="https://images.unsplash.com/photo-1505060890934-08b3cfead48d?auto=format&fit=crop&w=1600&q=80">
+</picture>
 
 - 🔗 [https://www.gotokyo.org/en/](https://www.gotokyo.org/en/)
 - ⭐ Rating: 9.5/10
@@ -105,7 +119,11 @@ Florida-->Brazil[Brazil ~8h]
 
 Perfect for quick, low-cost, high-value trips from South Florida.
 
-![Florida](https://images.unsplash.com/photo-1507525428034-b723cf961d3e)
+<picture>
+	<source media="(prefers-color-scheme: dark)" srcset="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80&sat=-100&exp=-40#gh-dark-mode-only">
+	<source media="(prefers-color-scheme: light)" srcset="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80#gh-light-mode-only">
+	<img alt="Florida" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80">
+</picture>
 
 ---
 
@@ -131,7 +149,11 @@ Perfect for quick, low-cost, high-value trips from South Florida.
 
 ### Key West
 
-![Key West](https://images.unsplash.com/photo-1507525428034-b723cf961d3e)
+<picture>
+	<source media="(prefers-color-scheme: dark)" srcset="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80&sat=-100&exp=-40#gh-dark-mode-only">
+	<source media="(prefers-color-scheme: light)" srcset="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80#gh-light-mode-only">
+	<img alt="Key West" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80">
+</picture>
 
 - 🔗 [https://fla-keys.com/](https://fla-keys.com/)
 - ⭐ 9.2/10
@@ -163,7 +185,11 @@ Perfect for quick, low-cost, high-value trips from South Florida.
 
 Best mix of culture, entertainment, and convenience.
 
-![USA](https://images.unsplash.com/photo-1494526585095-c41746248156)
+<picture>
+	<source media="(prefers-color-scheme: dark)" srcset="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80&sat=-100&exp=-40#gh-dark-mode-only">
+	<source media="(prefers-color-scheme: light)" srcset="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80#gh-light-mode-only">
+	<img alt="USA" src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80">
+</picture>
 
 ---
 
@@ -199,7 +225,11 @@ Best mix of culture, entertainment, and convenience.
 
 Best value per dollar for all-inclusive travel.
 
-![Cruise](https://images.unsplash.com/photo-1507525428034-b723cf961d3e)
+<picture>
+	<source media="(prefers-color-scheme: dark)" srcset="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80&sat=-100&exp=-40#gh-dark-mode-only">
+	<source media="(prefers-color-scheme: light)" srcset="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80#gh-light-mode-only">
+	<img alt="Cruise" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80">
+</picture>
 
 ---
 
@@ -278,7 +308,11 @@ LateBooking-->HighPrices
 
 Save money and time with bulk meal strategies.
 
-![Food](https://images.unsplash.com/photo-1504674900247-0877df9cc836)
+<picture>
+	<source media="(prefers-color-scheme: dark)" srcset="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80&sat=-100&exp=-40#gh-dark-mode-only">
+	<source media="(prefers-color-scheme: light)" srcset="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80#gh-light-mode-only">
+	<img alt="Food" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80">
+</picture>
 
 ---
 
