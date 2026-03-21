@@ -8,12 +8,13 @@ A fully interactive, data-driven travel & lifestyle dashboard designed for fast 
 
 ## 🧭 Navigation Tabs
 
-- [🌎 Worldwide Travel](#-worldwide-travel)
-- [🌴 Florida Travel](#-florida-travel)
-- [🇺🇸 USA Travel](#-usa-travel)
-- [🚢 Cruises from South Florida](#-cruises-from-south-florida)
-- [🎉 Holiday Long Weekend Travel](#-holiday-long-weekend-travel)
-- [🍱 Meal Planning (No Cooking Strategy)](#-meal-planning-no-cooking-strategy)
+[![🌎 Worldwide Travel](https://img.shields.io/badge/🌎_Worldwide_Travel-1f6feb?style=for-the-badge)](#-worldwide-travel)
+[![🌴 Florida Travel](https://img.shields.io/badge/🌴_Florida_Travel-238636?style=for-the-badge)](#-florida-travel)
+[![🇺🇸 USA Travel](https://img.shields.io/badge/🇺🇸_USA_Travel-8250df?style=for-the-badge)](#-usa-travel)
+
+[![🚢 Cruises from South Florida](https://img.shields.io/badge/🚢_Cruises_South_FL-0ea5e9?style=for-the-badge)](#-cruises-from-south-florida)
+[![🎉 Holiday Long Weekend](https://img.shields.io/badge/🎉_Holiday_Long_Weekend-f59e0b?style=for-the-badge)](#-holiday-long-weekend-travel)
+[![🍱 Meal Planning](https://img.shields.io/badge/🍱_Meal_Planning-ef4444?style=for-the-badge)](#-meal-planning-no-cooking-strategy)
 
 ---
 
