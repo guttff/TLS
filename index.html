@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ultimate Travel & Lifestyle Planning Hub</title>
+    <style>
+      :root {
+        --bg: #0d1117;
+        --panel: #161b22;
+        --panel-2: #1f2937;
+        --text: #e6edf3;
+        --muted: #9fb0c3;
+        --accent: #58a6ff;
+        --accent-2: #1f6feb;
+        --border: #30363d;
+        --success: #3fb950;
+        --warn: #d29922;
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #f8fafc;
+          --panel: #ffffff;
+          --panel-2: #eef2ff;
+          --text: #0f172a;
+          --muted: #475569;
+          --accent: #2563eb;
+          --accent-2: #1d4ed8;
+          --border: #cbd5e1;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        background:
+          radial-gradient(1200px 600px at 15% -20%, #1e3a8a33, transparent),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(8px);
+        background: color-mix(in srgb, var(--bg) 85%, transparent);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 12px 24px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .tab {
+        border: 1px solid var(--border);
+        background: var(--panel);
+        color: var(--text);
+        border-radius: 999px;
+        padding: 8px 14px;
+        cursor: pointer;
+        font-size: 0.9rem;
+      }
+
+      .tab:hover {
+        border-color: var(--accent);
+      }
+      .tab.active {
+        background: var(--accent-2);
+        border-color: var(--accent-2);
+        color: white;
+      }
+
+      h1 {
+        margin: 8px 0 8px;
+        font-size: clamp(1.6rem, 2.7vw, 2.25rem);
+      }
+      h2 {
+        margin-top: 0;
+      }
+      h3 {
+        margin-top: 24px;
+      }
+      p.lead {
+        color: var(--muted);
+        margin-top: 0;
+      }
+
+      .badge {
+        display: inline-block;
+        font-size: 0.8rem;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 4px 10px;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .panel {
+        display: none;
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 20px;
+        margin-top: 18px;
+      }
+
+      .panel.active {
+        display: block;
+      }
+
+      .hero {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        margin: 10px 0 16px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        overflow: hidden;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+      }
+
+      th,
+      td {
+        text-align: left;
+        padding: 10px;
+        border-bottom: 1px solid var(--border);
+        font-size: 0.92rem;
+      }
+
+      th {
+        background: var(--panel-2);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
+        margin-top: 14px;
+      }
+
+      .card {
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 12px;
+        background: color-mix(in srgb, var(--panel) 70%, var(--panel-2));
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      ul {
+        margin-top: 8px;
+      }
+
+      .footer-note {
+        margin: 26px 0 4px;
+        color: var(--muted);
+        font-size: 0.9rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="topbar">
+      <div class="tabs" role="tablist" aria-label="Travel sections">
+        <button
+          class="tab active"
+          data-tab="worldwide"
+          role="tab"
+          aria-selected="true"
+        >
+          🌎 Worldwide
+        </button>
+        <button class="tab" data-tab="florida" role="tab" aria-selected="false">
+          🌴 Florida
+        </button>
+        <button class="tab" data-tab="usa" role="tab" aria-selected="false">
+          🇺🇸 USA
+        </button>
+        <button class="tab" data-tab="cruises" role="tab" aria-selected="false">
+          🚢 Cruises
+        </button>
+        <button class="tab" data-tab="holiday" role="tab" aria-selected="false">
+          🎉 Holiday Weekends
+        </button>
+        <button class="tab" data-tab="meals" role="tab" aria-selected="false">
+          🍱 Meal Planning
+        </button>
+        <button class="tab" data-tab="final" role="tab" aria-selected="false">
+          🎯 Final Decision
+        </button>
+      </div>
+    </nav>
+
+    <main class="container">
+      <span class="badge">Dark Mode Ready</span>
+      <h1>Ultimate Travel & Lifestyle Planning Hub</h1>
+      <p class="lead">
+        A website-style, data-driven dashboard for travel and lifestyle
+        decisions — with instant tab switching and no page scrolling on
+        navigation.
+      </p>
+
+      <section class="panel active" id="worldwide" role="tabpanel">
+        <h2>🌎 Worldwide Travel</h2>
+        <p>
+          Global travel from Florida offers diverse experiences but varies
+          significantly in cost, travel time, and logistics.
+        </p>
+        <img
+          class="hero"
+          src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=1600&q=80"
+          alt="World Travel"
+        />
+
+        <h3>✈️ Travel Time</h3>
+        <div class="grid">
+          <div class="card">Paris: ~9h</div>
+          <div class="card">Rome: ~10h</div>
+          <div class="card">Tokyo: ~17h</div>
+          <div class="card">Bali: ~22h</div>
+          <div class="card">Caribbean: ~2h</div>
+          <div class="card">Brazil: ~8h</div>
+        </div>
+
+        <h3>💰 Cost Comparison by Region</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Region</th>
+              <th>Flight ($)</th>
+              <th>Hotel/Night ($)</th>
+              <th>Total 5-Day Budget</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Europe</td>
+              <td>600–1200</td>
+              <td>150–400</td>
+              <td>1500–3500</td>
+            </tr>
+            <tr>
+              <td>Asia</td>
+              <td>900–1800</td>
+              <td>80–300</td>
+              <td>1800–4000</td>
+            </tr>
+            <tr>
+              <td>Caribbean</td>
+              <td>200–600</td>
+              <td>120–350</td>
+              <td>900–2500</td>
+            </tr>
+            <tr>
+              <td>S. America</td>
+              <td>400–900</td>
+              <td>70–250</td>
+              <td>1200–2800</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>🧠 Quick Picks</h3>
+        <ul>
+          <li>💸 Budget: Caribbean</li>
+          <li>💎 Luxury: Paris</li>
+          <li>⚡ Short trip: Bahamas</li>
+        </ul>
+      </section>
+
+      <section class="panel" id="florida" role="tabpanel" hidden>
+        <h2>🌴 Florida Travel</h2>
+        <p>Perfect for quick, low-cost, high-value trips from South Florida.</p>
+        <img
+          class="hero"
+          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80"
+          alt="Florida"
+        />
+
+        <h3>🚗 Driving Distances</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Destination</th>
+              <th>Distance</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Miami</td>
+              <td>30 mi</td>
+              <td>45 min</td>
+            </tr>
+            <tr>
+              <td>Orlando</td>
+              <td>230 mi</td>
+              <td>3.5 hr</td>
+            </tr>
+            <tr>
+              <td>Key West</td>
+              <td>190 mi</td>
+              <td>4 hr</td>
+            </tr>
+            <tr>
+              <td>Tampa</td>
+              <td>270 mi</td>
+              <td>4 hr</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>🧠 Quick Picks</h3>
+        <ul>
+          <li>Weekend: Miami</li>
+          <li>Relaxation: Naples</li>
+          <li>Adventure: Key West</li>
+        </ul>
+      </section>
+
+      <section class="panel" id="usa" role="tabpanel" hidden>
+        <h2>🇺🇸 USA Travel</h2>
+        <p>Best mix of culture, entertainment, and convenience.</p>
+        <img
+          class="hero"
+          src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80"
+          alt="USA"
+        />
+
+        <h3>✈️ Flight + Hotel Bundles</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Destination</th>
+              <th>Flight</th>
+              <th>Hotel</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>NYC</td>
+              <td>$200–400</td>
+              <td>$250</td>
+              <td>$1200</td>
+            </tr>
+            <tr>
+              <td>Vegas</td>
+              <td>$250–500</td>
+              <td>$200</td>
+              <td>$1300</td>
+            </tr>
+            <tr>
+              <td>LA</td>
+              <td>$300–600</td>
+              <td>$250</td>
+              <td>$1500</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>🧠 Quick Picks</h3>
+        <ul>
+          <li>Party: Vegas</li>
+          <li>Culture: NYC</li>
+          <li>Nature: National Parks</li>
+        </ul>
+      </section>
+
+      <section class="panel" id="cruises" role="tabpanel" hidden>
+        <h2>🚢 Cruises from South Florida</h2>
+        <p>Best value per dollar for all-inclusive travel.</p>
+        <img
+          class="hero"
+          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80"
+          alt="Cruise"
+        />
+
+        <h3>⚓ Cruise Comparison</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Cruise Line</th>
+              <th>Price</th>
+              <th>Rating</th>
+              <th>Duration</th>
+              <th>Port</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Royal Caribbean</td>
+              <td>$400–900</td>
+              <td>⭐9</td>
+              <td>3–4 days</td>
+              <td>Miami</td>
+            </tr>
+            <tr>
+              <td>Carnival</td>
+              <td>$300–700</td>
+              <td>⭐8</td>
+              <td>3–4 days</td>
+              <td>Miami</td>
+            </tr>
+            <tr>
+              <td>Norwegian</td>
+              <td>$450–1000</td>
+              <td>⭐9</td>
+              <td>3–4 days</td>
+              <td>Ft Lauderdale</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>🧠 Quick Picks</h3>
+        <ul>
+          <li>Budget: Carnival</li>
+          <li>Luxury: Norwegian</li>
+          <li>Best overall: Royal Caribbean</li>
+        </ul>
+      </section>
+
+      <section class="panel" id="holiday" role="tabpanel" hidden>
+        <h2>🎉 Holiday Long Weekend Travel</h2>
+        <p>Maximize PTO with strategic planning.</p>
+
+        <h3>📈 Booking Timing Trend</h3>
+        <div class="grid">
+          <div class="card">
+            <strong>Early Booking</strong><br /><span class="muted"
+              >Lowest prices</span
+            >
+          </div>
+          <div class="card">
+            <strong>Mid Booking</strong><br /><span class="muted"
+              >Moderate prices</span
+            >
+          </div>
+          <div class="card">
+            <strong>Late Booking</strong><br /><span class="muted"
+              >Highest prices</span
+            >
+          </div>
+        </div>
+
+        <h3>📅 Best Trips</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Holiday</th>
+              <th>Destination</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Memorial Day</td>
+              <td>Bahamas</td>
+              <td>$500</td>
+            </tr>
+            <tr>
+              <td>July 4th</td>
+              <td>Miami</td>
+              <td>$600</td>
+            </tr>
+            <tr>
+              <td>Labor Day</td>
+              <td>NYC</td>
+              <td>$800</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>🧠 Strategy</h3>
+        <ul>
+          <li>Book 2–3 months early</li>
+          <li>Avoid peak flight times</li>
+        </ul>
+      </section>
+
+      <section class="panel" id="meals" role="tabpanel" hidden>
+        <h2>🍱 Meal Planning (No Cooking Strategy)</h2>
+        <p>Save money and time with bulk meal strategies.</p>
+        <img
+          class="hero"
+          src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80"
+          alt="Food"
+        />
+
+        <h3>🛒 Options</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Store</th>
+              <th>Price</th>
+              <th>Servings</th>
+              <th>Cost/Meal</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Whole Foods</td>
+              <td>$35</td>
+              <td>4–5</td>
+              <td>$7</td>
+              <td>Healthy</td>
+            </tr>
+            <tr>
+              <td>Costco</td>
+              <td>$25</td>
+              <td>5–6</td>
+              <td>$5</td>
+              <td>Bulk</td>
+            </tr>
+            <tr>
+              <td>Publix</td>
+              <td>$40</td>
+              <td>4–6</td>
+              <td>$6–8</td>
+              <td>Variety</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>🧠 Quick Picks</h3>
+        <ul>
+          <li>Best value: Costco</li>
+          <li>Best quality: Whole Foods</li>
+          <li>Best variety: Publix</li>
+        </ul>
+      </section>
+
+      <section class="panel" id="final" role="tabpanel" hidden>
+        <h2>🎯 Final Decision Tool</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Goal</th>
+              <th>Best Option</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cheapest Travel</td>
+              <td>Florida</td>
+            </tr>
+            <tr>
+              <td>Best Experience</td>
+              <td>Europe</td>
+            </tr>
+            <tr>
+              <td>Quick Escape</td>
+              <td>Cruise</td>
+            </tr>
+            <tr>
+              <td>No Cooking</td>
+              <td>Costco Meals</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          ✅ You now have a complete planning system to compare costs quickly,
+          choose trips faster, and optimize time and budget.
+        </p>
+      </section>
+
+      <p class="footer-note">Built as a single-page tabbed experience.</p>
+    </main>
+
+    <script>
+      const tabs = document.querySelectorAll(".tab");
+      const panels = document.querySelectorAll(".panel");
+
+      function activateTab(id) {
+        tabs.forEach((tab) => {
+          const active = tab.dataset.tab === id;
+          tab.classList.toggle("active", active);
+          tab.setAttribute("aria-selected", active ? "true" : "false");
+        });
+
+        panels.forEach((panel) => {
+          const active = panel.id === id;
+          panel.classList.toggle("active", active);
+          panel.hidden = !active;
+        });
+      }
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => activateTab(tab.dataset.tab));
+      });
+    </script>
+  </body>
+</html>
