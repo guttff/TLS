@@ -225,6 +225,15 @@
         font-weight: 700;
       }
 
+      .table-wrap {
+        width: 100%;
+        overflow-x: auto;
+      }
+
+      .wide-table {
+        min-width: 1500px;
+      }
+
       ul {
         margin-top: 8px;
       }
@@ -527,133 +536,216 @@
         </div>
 
         <h3>⚓ Major Holiday Cruise Comparison</h3>
-        <table id="cruiseTable">
-          <thead>
-            <tr>
-              <th>Holiday</th>
-              <th>Cruise Line</th>
-              <th>Ship</th>
-              <th>Duration</th>
-              <th>Port</th>
-              <th>Package</th>
-              <th>Includes</th>
-              <th>Total Cost ($)</th>
-              <th>Value Score</th>
-            </tr>
-          </thead>
-          <tbody id="cruiseTableBody">
-            <tr>
-              <td>Memorial Day</td>
-              <td>Royal Caribbean</td>
-              <td>Freedom of the Seas</td>
-              <td>4 nights</td>
-              <td>Miami</td>
-              <td>Value</td>
-              <td>Meals, Wi‑Fi, Oceanview</td>
-              <td data-cost="890">890</td>
-              <td data-score="8.8">8.8</td>
-            </tr>
-            <tr>
-              <td>July 4th</td>
-              <td>Carnival</td>
-              <td>Carnival Sunrise</td>
-              <td>4 nights</td>
-              <td>Miami</td>
-              <td>Basic</td>
-              <td>Meals, Interior Cabin</td>
-              <td data-cost="720">720</td>
-              <td data-score="8.1">8.1</td>
-            </tr>
-            <tr>
-              <td>Labor Day</td>
-              <td>Norwegian</td>
-              <td>Norwegian Sky</td>
-              <td>5 nights</td>
-              <td>Ft Lauderdale</td>
-              <td>Premium</td>
-              <td>Meals, Drinks, Wi‑Fi, Shore Credit</td>
-              <td data-cost="1140">1140</td>
-              <td data-score="9.0">9.0</td>
-            </tr>
-            <tr>
-              <td>Thanksgiving</td>
-              <td>MSC</td>
-              <td>MSC Seascape</td>
-              <td>5 nights</td>
-              <td>Miami</td>
-              <td>Value</td>
-              <td>Meals, Balcony Upgrade</td>
-              <td data-cost="960">960</td>
-              <td data-score="8.6">8.6</td>
-            </tr>
-            <tr>
-              <td>Christmas</td>
-              <td>Celebrity</td>
-              <td>Celebrity Reflection</td>
-              <td>6 nights</td>
-              <td>Ft Lauderdale</td>
-              <td>Luxury</td>
-              <td>Premium Dining, Drinks, Wi‑Fi</td>
-              <td data-cost="1680">1680</td>
-              <td data-score="9.3">9.3</td>
-            </tr>
-            <tr>
-              <td>New Year</td>
-              <td>Royal Caribbean</td>
-              <td>Icon of the Seas</td>
-              <td>7 nights</td>
-              <td>Miami</td>
-              <td>Luxury</td>
-              <td>Meals, Shows, Waterpark Access</td>
-              <td data-cost="1790">1790</td>
-              <td data-score="9.4">9.4</td>
-            </tr>
-            <tr>
-              <td>Memorial Day</td>
-              <td>Carnival</td>
-              <td>Carnival Conquest</td>
-              <td>3 nights</td>
-              <td>Miami</td>
-              <td>Basic</td>
-              <td>Meals, Interior Cabin</td>
-              <td data-cost="540">540</td>
-              <td data-score="7.8">7.8</td>
-            </tr>
-            <tr>
-              <td>Labor Day</td>
-              <td>MSC</td>
-              <td>MSC Divina</td>
-              <td>4 nights</td>
-              <td>Miami</td>
-              <td>Value</td>
-              <td>Meals, Wi‑Fi, Balcony</td>
-              <td data-cost="830">830</td>
-              <td data-score="8.4">8.4</td>
-            </tr>
-            <tr>
-              <td>Thanksgiving</td>
-              <td>Norwegian</td>
-              <td>Norwegian Escape</td>
-              <td>6 nights</td>
-              <td>Miami</td>
-              <td>Premium</td>
-              <td>Meals, Drinks, Excursion Credit</td>
-              <td data-cost="1360">1360</td>
-              <td data-score="9.1">9.1</td>
-            </tr>
-            <tr>
-              <td>July 4th</td>
-              <td>Celebrity</td>
-              <td>Celebrity Silhouette</td>
-              <td>5 nights</td>
-              <td>Ft Lauderdale</td>
-              <td>Premium</td>
-              <td>Meals, Wi‑Fi, Drinks</td>
-              <td data-cost="1290">1290</td>
-              <td data-score="9.2">9.2</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-wrap">
+          <table id="cruiseTable" class="wide-table">
+            <thead>
+              <tr>
+                <th>Holiday</th>
+                <th>Cruise Line</th>
+                <th>Ship</th>
+                <th>Duration</th>
+                <th>Port</th>
+                <th>Package</th>
+                <th>Includes</th>
+                <th>Total Cost ($)</th>
+                <th>Value Score</th>
+                <th>Booking URL</th>
+              </tr>
+            </thead>
+            <tbody id="cruiseTableBody">
+              <tr>
+                <td>Memorial Day</td>
+                <td>Royal Caribbean</td>
+                <td>Freedom of the Seas</td>
+                <td>4 nights</td>
+                <td>Miami</td>
+                <td>Value</td>
+                <td>Meals, Wi‑Fi, Oceanview</td>
+                <td data-cost="890">890</td>
+                <td data-score="8.8">8.8</td>
+                <td>
+                  <a
+                    href="https://www.royalcaribbean.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Book</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>July 4th</td>
+                <td>Carnival</td>
+                <td>Carnival Sunrise</td>
+                <td>4 nights</td>
+                <td>Miami</td>
+                <td>Basic</td>
+                <td>Meals, Interior Cabin</td>
+                <td data-cost="720">720</td>
+                <td data-score="8.1">8.1</td>
+                <td>
+                  <a
+                    href="https://www.carnival.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Book</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Labor Day</td>
+                <td>Norwegian</td>
+                <td>Norwegian Sky</td>
+                <td>5 nights</td>
+                <td>Ft Lauderdale</td>
+                <td>Premium</td>
+                <td>Meals, Drinks, Wi‑Fi, Shore Credit</td>
+                <td data-cost="1140">1140</td>
+                <td data-score="9.0">9.0</td>
+                <td>
+                  <a
+                    href="https://www.ncl.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Book</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Thanksgiving</td>
+                <td>MSC</td>
+                <td>MSC Seascape</td>
+                <td>5 nights</td>
+                <td>Miami</td>
+                <td>Value</td>
+                <td>Meals, Balcony Upgrade</td>
+                <td data-cost="960">960</td>
+                <td data-score="8.6">8.6</td>
+                <td>
+                  <a
+                    href="https://www.msccruisesusa.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Book</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Christmas</td>
+                <td>Celebrity</td>
+                <td>Celebrity Reflection</td>
+                <td>6 nights</td>
+                <td>Ft Lauderdale</td>
+                <td>Luxury</td>
+                <td>Premium Dining, Drinks, Wi‑Fi</td>
+                <td data-cost="1680">1680</td>
+                <td data-score="9.3">9.3</td>
+                <td>
+                  <a
+                    href="https://www.celebritycruises.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Book</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>New Year</td>
+                <td>Royal Caribbean</td>
+                <td>Icon of the Seas</td>
+                <td>7 nights</td>
+                <td>Miami</td>
+                <td>Luxury</td>
+                <td>Meals, Shows, Waterpark Access</td>
+                <td data-cost="1790">1790</td>
+                <td data-score="9.4">9.4</td>
+                <td>
+                  <a
+                    href="https://www.royalcaribbean.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Book</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Memorial Day</td>
+                <td>Carnival</td>
+                <td>Carnival Conquest</td>
+                <td>3 nights</td>
+                <td>Miami</td>
+                <td>Basic</td>
+                <td>Meals, Interior Cabin</td>
+                <td data-cost="540">540</td>
+                <td data-score="7.8">7.8</td>
+                <td>
+                  <a
+                    href="https://www.carnival.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Book</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Labor Day</td>
+                <td>MSC</td>
+                <td>MSC Divina</td>
+                <td>4 nights</td>
+                <td>Miami</td>
+                <td>Value</td>
+                <td>Meals, Wi‑Fi, Balcony</td>
+                <td data-cost="830">830</td>
+                <td data-score="8.4">8.4</td>
+                <td>
+                  <a
+                    href="https://www.msccruisesusa.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Book</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Thanksgiving</td>
+                <td>Norwegian</td>
+                <td>Norwegian Escape</td>
+                <td>6 nights</td>
+                <td>Miami</td>
+                <td>Premium</td>
+                <td>Meals, Drinks, Excursion Credit</td>
+                <td data-cost="1360">1360</td>
+                <td data-score="9.1">9.1</td>
+                <td>
+                  <a
+                    href="https://www.ncl.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Book</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>July 4th</td>
+                <td>Celebrity</td>
+                <td>Celebrity Silhouette</td>
+                <td>5 nights</td>
+                <td>Ft Lauderdale</td>
+                <td>Premium</td>
+                <td>Meals, Wi‑Fi, Drinks</td>
+                <td data-cost="1290">1290</td>
+                <td data-score="9.2">9.2</td>
+                <td>
+                  <a
+                    href="https://www.celebritycruises.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Book</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section class="panel" id="holiday" role="tabpanel" hidden>
