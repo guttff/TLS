@@ -183,6 +183,57 @@
         color: var(--muted);
       }
 
+      .filters {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 10px;
+        margin: 14px 0;
+      }
+
+      .filter-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .filter-group label {
+        font-size: 0.82rem;
+        color: var(--muted);
+      }
+
+      .filter-group select,
+      .filter-group input {
+        background: var(--panel-2);
+        border: 1px solid var(--border);
+        color: var(--text);
+        border-radius: 8px;
+        padding: 8px 10px;
+      }
+
+      .kpis {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 10px;
+        margin: 12px 0 8px;
+      }
+
+      .kpi {
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 10px;
+        background: color-mix(in srgb, var(--panel) 70%, var(--panel-2));
+      }
+
+      .kpi .label {
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+
+      .kpi .value {
+        font-size: 1.05rem;
+        font-weight: 700;
+      }
+
       ul {
         margin-top: 8px;
       }
@@ -404,56 +455,214 @@
       </section>
 
       <section class="panel" id="cruises" role="tabpanel" hidden>
-        <h2>🚢 Cruises from South Florida</h2>
-        <p>Best value per dollar for all-inclusive travel.</p>
+        <h2>🚢 Ultimate Cruise Dashboard</h2>
+        <p>
+          Compare holiday cruises from South Florida across total cost, package
+          inclusions, and value.
+        </p>
         <img
           class="hero"
           src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80"
           alt="Cruise"
         />
 
-        <h3>⚓ Cruise Comparison</h3>
-        <table>
+        <h3>🧭 Holiday Cruise Filters</h3>
+        <div class="filters">
+          <div class="filter-group">
+            <label for="holidayFilter">Holiday</label>
+            <select id="holidayFilter">
+              <option value="all">All holidays</option>
+              <option value="Memorial Day">Memorial Day</option>
+              <option value="July 4th">July 4th</option>
+              <option value="Labor Day">Labor Day</option>
+              <option value="Thanksgiving">Thanksgiving</option>
+              <option value="Christmas">Christmas</option>
+              <option value="New Year">New Year</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="lineFilter">Cruise line</label>
+            <select id="lineFilter">
+              <option value="all">All lines</option>
+              <option value="Royal Caribbean">Royal Caribbean</option>
+              <option value="Carnival">Carnival</option>
+              <option value="Norwegian">Norwegian</option>
+              <option value="MSC">MSC</option>
+              <option value="Celebrity">Celebrity</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="packageFilter">Package</label>
+            <select id="packageFilter">
+              <option value="all">All packages</option>
+              <option value="Basic">Basic</option>
+              <option value="Value">Value</option>
+              <option value="Premium">Premium</option>
+              <option value="Luxury">Luxury</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="maxCostFilter">Max total cost ($)</label>
+            <input
+              id="maxCostFilter"
+              type="number"
+              min="300"
+              step="50"
+              value="1800"
+            />
+          </div>
+        </div>
+
+        <div class="kpis">
+          <div class="kpi">
+            <div class="label">Matching Cruises</div>
+            <div class="value" id="cruiseCount">0</div>
+          </div>
+          <div class="kpi">
+            <div class="label">Average Total Cost</div>
+            <div class="value" id="avgCruiseCost">$0</div>
+          </div>
+          <div class="kpi">
+            <div class="label">Lowest Cost</div>
+            <div class="value" id="minCruiseCost">$0</div>
+          </div>
+          <div class="kpi">
+            <div class="label">Best Value Score</div>
+            <div class="value" id="bestValueScore">—</div>
+          </div>
+        </div>
+
+        <h3>⚓ Major Holiday Cruise Comparison</h3>
+        <table id="cruiseTable">
           <thead>
             <tr>
+              <th>Holiday</th>
               <th>Cruise Line</th>
-              <th>Price</th>
-              <th>Rating</th>
+              <th>Ship</th>
               <th>Duration</th>
               <th>Port</th>
+              <th>Package</th>
+              <th>Includes</th>
+              <th>Total Cost ($)</th>
+              <th>Value Score</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="cruiseTableBody">
             <tr>
+              <td>Memorial Day</td>
               <td>Royal Caribbean</td>
-              <td>$400–900</td>
-              <td>⭐9</td>
-              <td>3–4 days</td>
+              <td>Freedom of the Seas</td>
+              <td>4 nights</td>
               <td>Miami</td>
+              <td>Value</td>
+              <td>Meals, Wi‑Fi, Oceanview</td>
+              <td data-cost="890">890</td>
+              <td data-score="8.8">8.8</td>
             </tr>
             <tr>
+              <td>July 4th</td>
               <td>Carnival</td>
-              <td>$300–700</td>
-              <td>⭐8</td>
-              <td>3–4 days</td>
+              <td>Carnival Sunrise</td>
+              <td>4 nights</td>
               <td>Miami</td>
+              <td>Basic</td>
+              <td>Meals, Interior Cabin</td>
+              <td data-cost="720">720</td>
+              <td data-score="8.1">8.1</td>
             </tr>
             <tr>
+              <td>Labor Day</td>
               <td>Norwegian</td>
-              <td>$450–1000</td>
-              <td>⭐9</td>
-              <td>3–4 days</td>
+              <td>Norwegian Sky</td>
+              <td>5 nights</td>
               <td>Ft Lauderdale</td>
+              <td>Premium</td>
+              <td>Meals, Drinks, Wi‑Fi, Shore Credit</td>
+              <td data-cost="1140">1140</td>
+              <td data-score="9.0">9.0</td>
+            </tr>
+            <tr>
+              <td>Thanksgiving</td>
+              <td>MSC</td>
+              <td>MSC Seascape</td>
+              <td>5 nights</td>
+              <td>Miami</td>
+              <td>Value</td>
+              <td>Meals, Balcony Upgrade</td>
+              <td data-cost="960">960</td>
+              <td data-score="8.6">8.6</td>
+            </tr>
+            <tr>
+              <td>Christmas</td>
+              <td>Celebrity</td>
+              <td>Celebrity Reflection</td>
+              <td>6 nights</td>
+              <td>Ft Lauderdale</td>
+              <td>Luxury</td>
+              <td>Premium Dining, Drinks, Wi‑Fi</td>
+              <td data-cost="1680">1680</td>
+              <td data-score="9.3">9.3</td>
+            </tr>
+            <tr>
+              <td>New Year</td>
+              <td>Royal Caribbean</td>
+              <td>Icon of the Seas</td>
+              <td>7 nights</td>
+              <td>Miami</td>
+              <td>Luxury</td>
+              <td>Meals, Shows, Waterpark Access</td>
+              <td data-cost="1790">1790</td>
+              <td data-score="9.4">9.4</td>
+            </tr>
+            <tr>
+              <td>Memorial Day</td>
+              <td>Carnival</td>
+              <td>Carnival Conquest</td>
+              <td>3 nights</td>
+              <td>Miami</td>
+              <td>Basic</td>
+              <td>Meals, Interior Cabin</td>
+              <td data-cost="540">540</td>
+              <td data-score="7.8">7.8</td>
+            </tr>
+            <tr>
+              <td>Labor Day</td>
+              <td>MSC</td>
+              <td>MSC Divina</td>
+              <td>4 nights</td>
+              <td>Miami</td>
+              <td>Value</td>
+              <td>Meals, Wi‑Fi, Balcony</td>
+              <td data-cost="830">830</td>
+              <td data-score="8.4">8.4</td>
+            </tr>
+            <tr>
+              <td>Thanksgiving</td>
+              <td>Norwegian</td>
+              <td>Norwegian Escape</td>
+              <td>6 nights</td>
+              <td>Miami</td>
+              <td>Premium</td>
+              <td>Meals, Drinks, Excursion Credit</td>
+              <td data-cost="1360">1360</td>
+              <td data-score="9.1">9.1</td>
+            </tr>
+            <tr>
+              <td>July 4th</td>
+              <td>Celebrity</td>
+              <td>Celebrity Silhouette</td>
+              <td>5 nights</td>
+              <td>Ft Lauderdale</td>
+              <td>Premium</td>
+              <td>Meals, Wi‑Fi, Drinks</td>
+              <td data-cost="1290">1290</td>
+              <td data-score="9.2">9.2</td>
             </tr>
           </tbody>
         </table>
-
-        <h3>🧠 Quick Picks</h3>
-        <ul>
-          <li>Budget: Carnival</li>
-          <li>Luxury: Norwegian</li>
-          <li>Best overall: Royal Caribbean</li>
-        </ul>
       </section>
 
       <section class="panel" id="holiday" role="tabpanel" hidden>
@@ -625,6 +834,67 @@
       tabs.forEach((tab) => {
         tab.addEventListener("click", () => activateTab(tab.dataset.tab));
       });
+
+      const holidayFilter = document.getElementById("holidayFilter");
+      const lineFilter = document.getElementById("lineFilter");
+      const packageFilter = document.getElementById("packageFilter");
+      const maxCostFilter = document.getElementById("maxCostFilter");
+      const cruiseRows = document.querySelectorAll("#cruiseTableBody tr");
+
+      function updateCruiseDashboard() {
+        const holiday = holidayFilter.value;
+        const line = lineFilter.value;
+        const packageType = packageFilter.value;
+        const maxCost = Number(maxCostFilter.value || 99999);
+
+        let count = 0;
+        let totalCost = 0;
+        let minCost = Infinity;
+        let bestScore = -Infinity;
+
+        cruiseRows.forEach((row) => {
+          const cells = row.querySelectorAll("td");
+          const rowHoliday = cells[0].textContent.trim();
+          const rowLine = cells[1].textContent.trim();
+          const rowPackage = cells[5].textContent.trim();
+          const rowCost = Number(cells[7].dataset.cost);
+          const rowScore = Number(cells[8].dataset.score);
+
+          const matchesHoliday = holiday === "all" || rowHoliday === holiday;
+          const matchesLine = line === "all" || rowLine === line;
+          const matchesPackage =
+            packageType === "all" || rowPackage === packageType;
+          const matchesCost = rowCost <= maxCost;
+
+          const show =
+            matchesHoliday && matchesLine && matchesPackage && matchesCost;
+          row.style.display = show ? "" : "none";
+
+          if (show) {
+            count += 1;
+            totalCost += rowCost;
+            minCost = Math.min(minCost, rowCost);
+            bestScore = Math.max(bestScore, rowScore);
+          }
+        });
+
+        document.getElementById("cruiseCount").textContent = String(count);
+        document.getElementById("avgCruiseCost").textContent =
+          count > 0 ? `$${Math.round(totalCost / count)}` : "$0";
+        document.getElementById("minCruiseCost").textContent =
+          count > 0 ? `$${minCost}` : "$0";
+        document.getElementById("bestValueScore").textContent =
+          count > 0 ? bestScore.toFixed(1) : "—";
+      }
+
+      [holidayFilter, lineFilter, packageFilter, maxCostFilter].forEach(
+        (control) => {
+          control.addEventListener("input", updateCruiseDashboard);
+          control.addEventListener("change", updateCruiseDashboard);
+        },
+      );
+
+      updateCruiseDashboard();
     </script>
   </body>
 </html>
